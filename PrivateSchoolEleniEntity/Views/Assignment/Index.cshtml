@@ -1,0 +1,67 @@
+﻿@model IEnumerable<PrivateSchoolEleniEntity.Models.Assignment>
+
+@{
+    ViewBag.Title = "Assignment List";
+}
+
+<h2>Assignments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm("Index","Assignment",FormMethod.Get))
+    {
+<p>
+    Description: @Html.DropDownList("assignmentDescription", "All")
+    Title: @Html.TextBox("SearchString") <br />
+    <input type="submit" value="Filter" />
+</p>
+}
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OralMark)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalMark)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OralMark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalMark)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+
+    </table>
