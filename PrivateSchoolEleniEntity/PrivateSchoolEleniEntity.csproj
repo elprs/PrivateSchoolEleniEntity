@@ -167,6 +167,14 @@
     <Compile Include="Migrations\202003011730551_dbStudents.designer.cs">
       <DependentUpon>202003011730551_dbStudents.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003011918069_dbdetails.cs" />
+    <Compile Include="Migrations\202003011918069_dbdetails.designer.cs">
+      <DependentUpon>202003011918069_dbdetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003011923171_dbStudentsdata.cs" />
+    <Compile Include="Migrations\202003011923171_dbStudentsdata.designer.cs">
+      <DependentUpon>202003011923171_dbStudentsdata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Assignment.cs" />
     <Compile Include="Models\Course.cs" />
@@ -275,6 +283,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003011730551_dbStudents.resx">
       <DependentUpon>202003011730551_dbStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003011918069_dbdetails.resx">
+      <DependentUpon>202003011918069_dbdetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003011923171_dbStudentsdata.resx">
+      <DependentUpon>202003011923171_dbStudentsdata.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

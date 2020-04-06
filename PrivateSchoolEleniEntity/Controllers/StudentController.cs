@@ -15,9 +15,17 @@ namespace PrivateSchoolEleniEntity.Controllers
         private PrivateSchoolDBContext db = new PrivateSchoolDBContext();
 
         // GET: Students
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Students.ToList());
+            var students = from m in db.Students
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.LastName.Contains(searchString));
+            }
+
+            return View(students);
         }
 
         // GET: Students/Details/5
